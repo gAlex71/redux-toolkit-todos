@@ -2,7 +2,7 @@ import React from 'react';
 import {useDispatch} from 'react-redux';
 import {removeTodo, toggleTodoComplete} from '../store/todoSlice';
 
-const TodoItem = ({id, text, completed}) => {
+const TodoItem = ({id, title, completed}) => {
 	const dispatch = useDispatch();
 
 	const removeItem = (id) => dispatch(removeTodo({id}));
@@ -15,7 +15,7 @@ const TodoItem = ({id, text, completed}) => {
                 checked={completed} 
                 onChange={() => selectedItem(id)} 
             />
-			<span>{text}</span>
+			<span>{title}</span>
 			<span className="delete" onClick={() => removeItem(id)}>
 				&times;
 			</span>
