@@ -3,7 +3,7 @@ import './App.css';
 import TodoList from './components/TodoList';
 import InputField from './components/InputField';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, fetchTodos } from './store/todoSlice';
+import { addNewTodo, fetchTodos } from './store/todoSlice';
 
 // useSelector - достать элемент из store
 // useDispatch - выполнить какое-либо действие
@@ -18,7 +18,7 @@ const App = () => {
 	}, [dispatch]);
 
 	const addTask = () => {
-		dispatch(addTodo({ text }));
+		dispatch(addNewTodo(text));
     	setText('');
 	};
 

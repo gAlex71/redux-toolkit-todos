@@ -1,12 +1,12 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
-import {removeTodo, toggleTodoComplete} from '../store/todoSlice';
+import {toggleStatus, deleteTodo} from '../store/todoSlice';
 
 const TodoItem = ({id, title, completed}) => {
 	const dispatch = useDispatch();
 
-	const removeItem = (id) => dispatch(removeTodo({id}));
-	const selectedItem = (id) => dispatch(toggleTodoComplete({id}));
+	const removeItem = (id) => dispatch(deleteTodo(id));
+	const selectedItem = (id) => dispatch(toggleStatus(id));
 
 	return (
 		<li>
